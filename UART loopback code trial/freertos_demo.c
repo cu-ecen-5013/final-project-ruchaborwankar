@@ -240,12 +240,14 @@ int main(void)
 //       }
 
     //CHARACTER TRANSFER
+//        UARTprintf("Transfer data from UART 3\n");
 //        UARTCharPutNonBlocking(UART3_BASE, 'A');
 //        UARTCharPutNonBlocking(UART3_BASE, 'E');
 //        UARTCharPutNonBlocking(UART3_BASE, 'S');
 //        UARTCharPutNonBlocking(UART3_BASE, 'D');
 
      //STRING TRANSFER
+        UARTprintf("Transfer data from UART 3\n");
         char string[]="AESD final project";
         char *ptr=string;
         int i;
@@ -259,7 +261,9 @@ int main(void)
             ptr++;
             count1++;
         }
+    
         int count=1;
+        UARTprintf("Receive data at UART 2\n");
         while(true){
 
             char c = ROM_UARTCharGet(UART2_BASE);
