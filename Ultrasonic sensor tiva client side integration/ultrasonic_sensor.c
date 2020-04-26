@@ -114,7 +114,7 @@ void calculation(uint32_t start_time,uint32_t echo_time){
     data_cm = (uint32_t)calcn/58;
     data_inch=(uint32_t)calcn/148;
     xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-    UARTprintf("Sensor data obtained is %d cm and %d inches\n",data_cm,data_inch);
+    UARTprintf("Sensor data= %d cm\n",data_cm);
     xSemaphoreGive(g_pUARTSemaphore);
 //    if(data_cm <= 15 || data_cm == 1035){
 //        //set trigger high
@@ -136,7 +136,7 @@ void Ultrasonic_sensor_task( void * pvParameters ){
         if( xSemaphoreTake(sem1, ( TickType_t )0) == pdTRUE )
         {
             xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-            UARTprintf("**Ultrasonic sensor task**\n");
+            UARTprintf("Sensor task\n");
             xSemaphoreGive(g_pUARTSemaphore);
             while(flag != 0)
             {
@@ -153,14 +153,17 @@ void Ultrasonic_sensor_task( void * pvParameters ){
                 GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,0);
                 //calculating the distance
                 calculation(start_time,echotime);
-
+                vTaskDelay( 5 / portTICK_PERIOD_MS );
+                //to eliminate distant data
+                if(data_cm < 100){
                 if(xQueueSend(xSendQueue, (void *)&data_cm,(TickType_t)10) == pdPASS)
                 {
 
                         xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-                        UARTprintf("Sending data from queue:%d\n",data_cm);
+                        UARTprintf("\n Sending data from queue:%d\n",data_cm);
                         xSemaphoreGive(g_pUARTSemaphore);
 
+                }
                 }
             //flag = 0;
                 xSemaphoreGive(sem2);
