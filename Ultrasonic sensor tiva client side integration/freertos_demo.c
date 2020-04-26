@@ -148,7 +148,7 @@ void transmit_uart(){
         UARTClockSourceSet(UART3_BASE, UART_CLOCK_PIOSC);
 
         //UART 3 SETUP AT 9600 BAUD RATE WITH A START BIT,8 BIT DATA AND 1 STOP BIT CONFIGURATION AT SYSTEM CLOCK OF 16000000
-        ROM_UARTConfigSetExpClk(UART3_BASE,16000000, 9600, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+        ROM_UARTConfigSetExpClk(UART3_BASE,16000000, 115200, (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
         UARTprintf("transmit uart done\n");
 }
 
@@ -190,10 +190,17 @@ void send_to_bb(uint32_t data){
     UARTprintf("itoa String is %s\n",str);
     int len=sizeof(str);
     int i;
+//    for ( i=0; i<len; i++)
+//           {
+//               //UARTCharPutNonBlocking(UART3_BASE,str[i]);
+//               UARTprintf("%c",str[i]);
+//           }
        for ( i=0; i<len; i++)
        {
-           UARTCharPut(UART3_BASE,str[i]);
+           UARTCharPutNonBlocking(UART3_BASE,str[i]);
+           //UARTprintf("%c",str[i]);
        }
+
 }
 
 /**************RECEIVE THREAD***********************/
@@ -202,7 +209,7 @@ void receive_queue( void * pvParameters ){
     while(1){
            if( xSemaphoreTake(sem2, ( TickType_t )0) == pdTRUE )
            {
-               UARTprintf("**Receive task**\n");
+               UARTprintf("Receive task\n");
                //receive queue parameters-queue handle,pointer to variable where data is to be received,max amount of time to be blocked
                if(xQueueReceive(xSendQueue, (void *)&rec_data ,(TickType_t)10) == pdPASS)
                    {
