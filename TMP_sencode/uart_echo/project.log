@@ -1,0 +1,271 @@
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Debug.83890777' [Sat Apr 11 17:24:09 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerDebug.1639051178'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.OPT_LEVEL
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.PREINCLUDE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ADVICE__POWER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEBUGGING_MODEL
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GEN_FUNC_SUBSECTIONS
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.UAL
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerDebug.1087256972'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Release.593129901' [Sat Apr 11 17:24:09 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerRelease.1127544006'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ADVICE__POWER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DIAG_WARNING
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DISPLAY_ERROR_NUMBER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GEN_FUNC_SUBSECTIONS
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.UAL
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerRelease.1546885031'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.DISPLAY_ERROR_NUMBER
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.XML_LINK_INFO
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Debug.83890777' [Sat Apr 11 17:39:18 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerDebug.1875640382'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerDebug.933078270'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Debug.83890777' [Sat Apr 11 17:44:46 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerDebug.636224848'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerDebug.1106330494'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Release.593129901' [Sat Apr 11 17:44:46 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerRelease.2083407387'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerRelease.1338422868'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Debug.83890777' [Sat Apr 11 18:21:53 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerDebug.664663221'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerDebug.841016344'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.SEARCH_PATH
+
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.TMS470.Release.593129901' [Sat Apr 11 18:21:53 MDT 2020]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.compilerRelease.1366246861'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.SILICON_VERSION
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.FLOAT_SUPPORT
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.LITTLE_ENDIAN
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.INCLUDE_PATH
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.DEFINE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.GCC
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.compilerID.ABI
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.TMS470_18.12.exe.linkerRelease.475488833'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.MAP_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.OUTPUT_FILE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.HEAP_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.STACK_SIZE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.TMS470_5.2.linkerID.LIBRARY
+
