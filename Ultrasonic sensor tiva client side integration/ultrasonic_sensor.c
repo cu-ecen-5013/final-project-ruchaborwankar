@@ -117,6 +117,7 @@ void calculation(uint32_t start_time,uint32_t echo_time){
     xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
        UARTprintf("Sensor data= %d cm\n",data_cm);
        xSemaphoreGive(g_pUARTSemaphore);
+    //condition to check for obstacle and display using 
     if(data_cm <= 15 ){
         //set trigger high
         GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,GPIO_PIN_4);
@@ -125,8 +126,6 @@ void calculation(uint32_t start_time,uint32_t echo_time){
     {
         GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,0);
     }
-
-//
 
 
 }
@@ -168,6 +167,7 @@ void Ultrasonic_sensor_task( void * pvParameters ){
                 }
                 else
                 {
+                    //in order to prevent garbage values to stay in queue
                     xQueueReset(xSendQueue);
                 }
             //flag = 0;
