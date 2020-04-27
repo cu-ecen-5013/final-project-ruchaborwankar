@@ -1,0 +1,296 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.4                     
+******************************************************************************
+>> Linked Sun Apr 12 21:17:24 2020
+
+OUTPUT FILE NAME:   <freertos_demo.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000a8d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000c0c  0003f3f4  R  X
+  SRAM                  20000000   00008000  0000037d  00007c83  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000c10   00000c10    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000954   00000954    r-x .text
+  00000bc0    00000bc0    0000001c   0000001c    r-- .const
+  00000be0    00000be0    00000030   00000030    r-- .cinit
+20000000    20000000    0000037d   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    00000148   00000000    rw- .bss
+  20000348    20000348    00000035   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000954     
+                  0000026c    000001ea     uartstdio.obj (.text:UARTvprintf)
+                  00000456    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000458    00000104     tasks.obj (.text:xTaskIncrementTick)
+                  0000055c    000000d2     portasm.obj (.text)
+                  0000062e    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  00000630    000000a8     freertos_demo.obj (.text:main)
+                  000006d8    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000774    00000090     freertos_demo.obj (.text:transmit_uart)
+                  00000804    0000008c     tasks.obj (.text:vTaskSwitchContext)
+                  00000890    00000068     freertos_demo.obj (.text:ConfigureUART)
+                  000008f8    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000960    00000060     uartstdio.obj (.text:UARTStdioConfig)
+                  000009c0    00000048     uartstdio.obj (.text:UARTwrite)
+                  00000a08    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00000a4c    00000040                                   : u_divt2.asm.obj (.text)
+                  00000a8c    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00000ac4    0000002c     port.obj (.text:xPortSysTickHandler)
+                  00000af0    00000028     tasks.obj (.text:prvResetNextTaskUnblockTime)
+                  00000b18    00000020     list.obj (.text:uxListRemove)
+                  00000b38    0000001a     uartstdio.obj (.text:UARTprintf)
+                  00000b52    00000018     list.obj (.text:vListInsertEnd)
+                  00000b6a    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00000b7c    0000000e     driverlib.lib : uart.obj (.text:UARTCharGetNonBlocking)
+                  00000b8a    0000000e                   : uart.obj (.text:UARTCharsAvail)
+                  00000b98    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000ba6    00000006     startup_ccs.obj (.text:ResetISR)
+                  00000bac    00000006     driverlib.lib : uart.obj (.text:UARTClockSourceSet)
+                  00000bb2    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000bb6    00000004                                   : exit.c.obj (.text:abort:abort)
+                  00000bba    00000002     startup_ccs.obj (.text:NmiSR)
+                  00000bbc    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  00000bbe    00000002     freertos_demo.obj (.text:vApplicationStackOverflowHook)
+
+.const     0    00000bc0    0000001c     
+                  00000bc0    0000000c     uartstdio.obj (.const:g_ui32UARTBase)
+                  00000bcc    0000000c     uartstdio.obj (.const:g_ui32UARTPeriph)
+                  00000bd8    00000004     port.obj (.const)
+
+.cinit     0    00000be0    00000030     
+                  00000be0    0000000c     (__TI_handler_table)
+                  00000bec    00000004     --HOLE-- [fill = 0]
+                  00000bf0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00000bf8    00000008     (.cinit..data.load) [load image, compression = lzss]
+                  00000c00    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000200    00000148     UNINITIALIZED
+                  20000200    00000140     tasks.obj (.bss:pxReadyTasksLists)
+                  20000340    00000008     tasks.obj (.bss)
+
+.data      0    20000348    00000035     UNINITIALIZED
+                  20000348    00000030     tasks.obj (.data)
+                  20000378    00000005     uartstdio.obj (.data)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       startup_ccs.obj              12     620       0      
+       freertos_demo.obj            418    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       430    620       0      
+                                                            
+    .\third_party\FreeRTOS\Source\
+       tasks.obj                    440    0         376    
+       list.obj                     56     0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       496    0         376    
+                                                            
+    .\third_party\FreeRTOS\Source\portable\CCS\ARM_CM4F\
+       portasm.obj                  210    0         0      
+       port.obj                     44     4         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       254    4         0      
+                                                            
+    .\utils\
+       uartstdio.obj                684    24        5      
+    +--+----------------------------+------+---------+---------+
+       Total:                       684    24        5      
+                                                            
+    C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       uart.obj                     34     0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       34     0         0      
+                                                            
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj            156    0         0      
+       copy_decompress_lzss.c.obj   104    0         0      
+       autoinit.c.obj               68     0         0      
+       u_divt2.asm.obj              64     0         0      
+       boot_cortex_m.c.obj          56     0         0      
+       copy_zero_init.c.obj         18     0         0      
+       copy_decompress_none.c.obj   14     0         0      
+       exit.c.obj                   4      0         0      
+       pre_init.c.obj               4      0         0      
+       div0.asm.obj                 2      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       490    0         0      
+                                                            
+       Stack:                       0      0         512    
+       Linker Generated:            0      44        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 2388   692       893    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00000c00 records: 2, size/record: 8, table size: 16
+	.bss: load addr=00000bf0, load size=00000008 bytes, run addr=20000200, run size=00000148 bytes, compression=zero_init
+	.data: load addr=00000bf8, load size=00000008 bytes, run addr=20000348, run size=00000035 bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000be0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000bb7  C$$EXIT                       
+00000891  ConfigureUART                 
+00000ba7  ResetISR                      
+00000b7d  UARTCharGetNonBlocking        
+00000b8b  UARTCharsAvail                
+00000bad  UARTClockSourceSet            
+00000961  UARTStdioConfig               
+00000b39  UARTprintf                    
+0000026d  UARTvprintf                   
+000009c1  UARTwrite                     
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+00000c00  __TI_CINIT_Base               
+00000c10  __TI_CINIT_Limit              
+00000be0  __TI_Handler_Table_Base       
+00000bec  __TI_Handler_Table_Limit      
+00000a09  __TI_auto_init_nobinit_nopinit
+000008f9  __TI_decompress_lzss          
+00000b99  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00000b6b  __TI_zero_init_nomemset       
+00000bbd  __aeabi_idiv0                 
+00000bbd  __aeabi_ldiv0                 
+000006d9  __aeabi_memcpy                
+000006d9  __aeabi_memcpy4               
+000006d9  __aeabi_memcpy8               
+00000a4d  __aeabi_uidiv                 
+00000a4d  __aeabi_uidivmod              
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+00000a8d  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00000bb3  _system_pre_init              
+00000bb7  abort                         
+ffffffff  binit                         
+00000000  g_pfnVectors                  
+00000631  main                          
+000006d9  memcpy                        
+20000348  pxCurrentTCB                  
+00000775  transmit_uart                 
+00000bd8  ulMaxSyscallInterruptPriority 
+0000056d  ulPortGetIPSR                 
+00000b19  uxListRemove                  
+00000bbf  vApplicationStackOverflowHook 
+00000b53  vListInsertEnd                
+00000621  vPortEnableVFP                
+000005e5  vPortSVCHandler               
+00000605  vPortStartFirstTask           
+00000805  vTaskSwitchContext            
+00000585  xPortPendSVHandler            
+00000ac5  xPortSysTickHandler           
+00000459  xTaskIncrementTick            
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  UARTvprintf                   
+00000459  xTaskIncrementTick            
+0000056d  ulPortGetIPSR                 
+00000585  xPortPendSVHandler            
+000005e5  vPortSVCHandler               
+00000605  vPortStartFirstTask           
+00000621  vPortEnableVFP                
+00000631  main                          
+000006d9  __aeabi_memcpy                
+000006d9  __aeabi_memcpy4               
+000006d9  __aeabi_memcpy8               
+000006d9  memcpy                        
+00000775  transmit_uart                 
+00000805  vTaskSwitchContext            
+00000891  ConfigureUART                 
+000008f9  __TI_decompress_lzss          
+00000961  UARTStdioConfig               
+000009c1  UARTwrite                     
+00000a09  __TI_auto_init_nobinit_nopinit
+00000a4d  __aeabi_uidiv                 
+00000a4d  __aeabi_uidivmod              
+00000a8d  _c_int00_noargs               
+00000ac5  xPortSysTickHandler           
+00000b19  uxListRemove                  
+00000b39  UARTprintf                    
+00000b53  vListInsertEnd                
+00000b6b  __TI_zero_init_nomemset       
+00000b7d  UARTCharGetNonBlocking        
+00000b8b  UARTCharsAvail                
+00000b99  __TI_decompress_none          
+00000ba7  ResetISR                      
+00000bad  UARTClockSourceSet            
+00000bb3  _system_pre_init              
+00000bb7  C$$EXIT                       
+00000bb7  abort                         
+00000bbd  __aeabi_idiv0                 
+00000bbd  __aeabi_ldiv0                 
+00000bbf  vApplicationStackOverflowHook 
+00000bd8  ulMaxSyscallInterruptPriority 
+00000be0  __TI_Handler_Table_Base       
+00000bec  __TI_Handler_Table_Limit      
+00000c00  __TI_CINIT_Base               
+00000c10  __TI_CINIT_Limit              
+20000000  __stack                       
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000348  pxCurrentTCB                  
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[58 symbols]
