@@ -39,7 +39,6 @@
 #include "ultrasonic_sensor.h"      //ultrasonic sensor code linked
 
 QueueHandle_t xSendQueue;
-//QueueHandle_t xRecvQueue;
 SemaphoreHandle_t sem1;                 //task 1 control
 SemaphoreHandle_t sem2;                 //task 2 control
 
@@ -152,56 +151,6 @@ void transmit_uart(){
         UARTprintf("transmit uart done\n");
 }
 
-//itoa function from Ritchie c programming book:https://en.wikibooks.org/wiki/C_Programming/stdlib.h/itoa
-void reverse(char s[])
-{
-    int i, j;
-    char c;
-
-    for (i = 0, j = strlen(s)-1; i<j; i++, j--) {
-        c = s[i];
-        s[i] = s[j];
-        s[j] = c;
-    }
-}
-
-/* itoa:  convert uint32_t n to characters in s */
- void itoa(uint32_t n, char s[])
- {
-     int i, sign;
-
-     if ((sign = n) < 0)  /* record sign */
-         n = -n;          /* make n positive */
-     i = 0;
-     do {       /* generate digits in reverse order */
-         s[i++] = n % 10 + '0';   /* get next digit */
-     } while ((n /= 10) > 0);     /* delete it */
-     if (sign < 0)
-         s[i++] = '-';
-     s[i] = '\0';
-     reverse(s);
- }
-
-
-/************convert using itoa and send data to bb***************************/
-void send_to_bb(uint32_t data){
-    char str[5];
-    itoa(data,str);
-    UARTprintf("itoa String is %s\n",str);
-    int len=sizeof(str);
-    int i;
-//    for ( i=0; i<len; i++)
-//           {
-//               //UARTCharPutNonBlocking(UART3_BASE,str[i]);
-//               UARTprintf("%c",str[i]);
-//           }
-       for ( i=0; i<len; i++)
-       {
-           UARTCharPutNonBlocking(UART3_BASE,str[i]);
-           //UARTprintf("%c",str[i]);
-       }
-
-}
 
 /**************RECEIVE THREAD***********************/
 void receive_queue( void * pvParameters ){
@@ -216,38 +165,17 @@ void receive_queue( void * pvParameters ){
                              xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
                              UARTprintf("Sending the Data received from queue data=%d\n",rec_data);
                              xSemaphoreGive(g_pUARTSemaphore);
-                             //send_to_bb(rec_data);
                              UARTCharPutNonBlocking(UART3_BASE,(uint8_t)rec_data);
 
                    }
            }
 
-           xQueueReset(xSendQueue);
+           xQueueReset(xSendQueue); //in order to prevent garbage or previous data to be sent
            xSemaphoreGive(sem1);
        }
 
 }
 
-//void send_queue( void * pvParameters ){
-//
-//
-//    while(1){
-//        if( xSemaphoreTake(sem1, ( TickType_t )0) == pdTRUE )
-//                {
-//                     //send queue parameters-queue handle,pointer to data to be sent,max amount of time to be blocked
-//                     if(xQueueSend(xSendQueue, (void *)&data_cm,(TickType_t)10) == pdPASS)
-//                        {
-//
-//                            xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-//                            UARTprintf("Sending data from queue:%d\n",data_cm);
-//                            xSemaphoreGive(g_pUARTSemaphore);
-//
-//                        }
-//                }
-//        xSemaphoreGive(sem2);
-//    }
-//
-//}
 
 //*****************************************************************************//
 // Initialize FreeRTOS and start the initial set of tasks.
@@ -300,13 +228,6 @@ int main(void)
                            xSemaphoreGive(g_pUARTSemaphore);
 
                   }
-//       if(xTaskCreate(send_queue, (const portCHAR *)"send queue",configMINIMAL_STACK_SIZE, NULL, 1, NULL) == pdPASS)
-//           {
-//                   xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-//                    UARTprintf("Send task is successfully created\n");
-//                    xSemaphoreGive(g_pUARTSemaphore);
-//
-//           }
 
        if((xTaskCreate(receive_queue, (const portCHAR *)"receive queue",configMINIMAL_STACK_SIZE, NULL, 1, NULL)) == pdPASS )
                   {
