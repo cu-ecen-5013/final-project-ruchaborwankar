@@ -33,6 +33,7 @@ volatile float calcn;             //calculation depending on clock cycles
 extern QueueHandle_t xSendQueue;
 extern SemaphoreHandle_t sem1;
 extern SemaphoreHandle_t sem2;
+
 //*****************************************************************************
 //
 // The mutex that protects concurrent access of UART from multiple tasks.
@@ -93,15 +94,15 @@ void Sensor_Init(){
 
 }
 
-//void Motor_Init(){
-//
-//    //PORT A ENABLED
-//    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-//    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, GPIO_PIN_4);
-//    //SETTING MOTOR PIN AT PORT A PIN 4 WITH 4mA STRENGTH AND WEAK PULL UP TYPE PIN
-//    GPIOPadConfigSet(GPIO_PORTA_BASE,GPIO_PIN_4,GPIO_STRENGTH_4MA,GPIO_PIN_TYPE_STD_WPU);
-//    UARTprintf("\n\rMotor enabled");
-//}
+void Motor_Init(){
+
+    //PORT A ENABLED
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+    GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, GPIO_PIN_4);
+    //SETTING MOTOR PIN AT PORT A PIN 4 WITH 4mA STRENGTH AND WEAK PULL UP TYPE PIN
+    GPIOPadConfigSet(GPIO_PORTA_BASE,GPIO_PIN_4,GPIO_STRENGTH_4MA,GPIO_PIN_TYPE_STD_WPU);
+    UARTprintf("\n\rMotor enabled");
+}
 
 
 void calculation(uint32_t start_time,uint32_t echo_time){
@@ -114,16 +115,17 @@ void calculation(uint32_t start_time,uint32_t echo_time){
     data_cm = (uint32_t)calcn/58;
     data_inch=(uint32_t)calcn/148;
     xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
-    UARTprintf("Sensor data= %d cm\n",data_cm);
-    xSemaphoreGive(g_pUARTSemaphore);
-//    if(data_cm <= 15 || data_cm == 1035){
-//        //set trigger high
-//        GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,0);
-//    }
-//    else
-//    {
-//        GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,GPIO_PIN_4);
-//    }
+       UARTprintf("Sensor data= %d cm\n",data_cm);
+       xSemaphoreGive(g_pUARTSemaphore);
+    if(data_cm <= 15 ){
+        //set trigger high
+        GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,GPIO_PIN_4);
+    }
+    else
+    {
+        GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_4,0);
+    }
+
 //
 
 
@@ -155,15 +157,18 @@ void Ultrasonic_sensor_task( void * pvParameters ){
                 calculation(start_time,echotime);
                 vTaskDelay( 5 / portTICK_PERIOD_MS );
                 //to eliminate distant data
-                if(data_cm < 100){
+                if(data_cm < 70){
                 if(xQueueSend(xSendQueue, (void *)&data_cm,(TickType_t)10) == pdPASS)
                 {
 
                         xSemaphoreTake(g_pUARTSemaphore, portMAX_DELAY);
                         UARTprintf("\n Sending data from queue:%d\n",data_cm);
                         xSemaphoreGive(g_pUARTSemaphore);
-
                 }
+                }
+                else
+                {
+                    xQueueReset(xSendQueue);
                 }
             //flag = 0;
                 xSemaphoreGive(sem2);
@@ -205,6 +210,3 @@ void Ultrasonic_sensor_IRQ(){
 //enable the interrupts
             IntMasterEnable();
 }
-
-
-
