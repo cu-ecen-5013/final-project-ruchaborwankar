@@ -2,7 +2,7 @@
 *                            ADVANCED EMBEDDED SYSTEMS DESIGN
  *                              AUTHOR:RUCHA BORWANKAR
  *                              FINAL PROJECT SPRINT 2
- *                             Ultrasonic sensor working
+ *                             Ultrasonic sensor working-header file 
  *
  *    TIVA peripherals: http://www.ti.com/lit/ug/spmu296/spmu296.pdf
  *    Ultrasonic sensor datasheet:https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf
